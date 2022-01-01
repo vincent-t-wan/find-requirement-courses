@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="index.css">
+  <style>
+    .center {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body class="center">
+  <h1>How 2 Graduate BCS</h1>
+  <h1>Wonder what courses you still need to take?</h1>
+  <p>This website gives you information about the leftover requirements you need to fulfill in order to get your degree.
+  </p>
+  <p style="color:red; font-weight: bold; font-size:20px">Currently, you must meet these conditions in order for the
+    analyzer to work:</p>
+  <p style="color:red;">- You are a 2025 or 2026 University of Waterloo Bachelor of Computer Science (Co-op) undergrad
+    student following <a
+      href="https://cs.uwaterloo.ca/sites/ca.computer-science/files/uploads/files/2021-2022_bcs_3.pdf">this
+      checklist.</a></p>
+  <p style="color:red;">- You have not passed multiple (> 1) courses that are prerequisites of another CS course that
+    has already been passed.</p>
+  <p style="color:red;">- You did not pass multiple different courses with the same number (ex. ENGL 108B and ENGL
+    108D).</p>
+  <p style="color:red;">- You did not discuss any exceptions with your CS advisor.</p>
+  <p style="color:red;">- You only took courses worth 0.5 units, or credit/non-credit courses.</p>
+  <p style="color:red;">- You did your Depth constraint with a 300 level course (so either option A, or option B with a
+    300 level course).</p>
+  <p style="color:red;">
+    Note that the analyzer follows a heuristic of how students complete their checklist; it's not a definite algorithm,
+    because there can exist multiple checkboxes that can be satisfied by one course (students can choose which checkbox
+    to satisfy). Due to the unofficial transcript not including courses satisfied by AP/IB credits, you will have to
+    take those courses into consideration after analyzing. Finally, the analyzer may contain bugs and/or errors, so
+    don't take this too seriously; the <a
+      href=http://ugradcalendar.uwaterloo.ca/group/MATH-Computer-Science-1>University Calendar</a> always takes
+    precedence.</p>
+  </p>
+  <h1 style="text-decoration:underline">Instructions:</h1>
+  <h3>1. Insert your University of Waterloo unofficial transcript (in PDF), by clicking on the "Choose File" button,
+    selecting the unofficial transcript, and clicking open.</h3>
+  <h3>2. Click the "Analyze!" button.</h3>
+  <h3>3. See your requirements below!</h3>
+
+  <input type="file" id="inputfile">
+
+  <button type="button" id="btnAnalyze">Analyze!</button>
+
+  <br>
+  <br>
+
+  <textarea style="width: 1300px; height: 580px;" id="requiredclasses"
+    placeholder="Your requirements will appear here..."></textarea>
+  <script>
+    // events that trigger actions
+    const inpFile = document.getElementById("inputfile");
+    const btnAnalyze = document.getElementById("btnAnalyze");
+    const resultText = document.getElementById("requiredclasses");
+
+    btnAnalyze.addEventListener("click", () => {
+      const formData = new FormData();
+
+      formData.append("pdfFile", inpFile.files[0]); // look for a key called pdfFile on server side
+
+      fetch("/extract-text", {
+        method: "post",
+        body: formData // sends pdfFile to server side
+      }).then(response => {
+        return response.text();
+      }).then(extractedText => {
+        resultText.value = extractedText;
+      });
+    });
+  </script>
+  <a href="https://github.com/vincent-t-wan/how2graduatebcs-uwaterloo">
+    <input type="image"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"
+      width="50" height="50" />
+  </a>
+</body>
+</html>

@@ -1,0 +1,40 @@
+* {
+    margin: 1;
+    padding: 0;
+    border: none;
+    font-family: system-ui;
+  }
+  
+  body {
+    font-size: 14px;
+  }
+
+  #btnAnalyze {
+    padding:8px 16px;
+    display:inline-block;
+    text-decoration: none;
+    border-radius:3px;
+    background-color:aquamarine;
+  }
+
+  #btnAnalyze:hover {
+    background:rgb(214, 255, 241);
+  }
+
+
+#inputfile {
+  margin: 0;
+  color: #5a5a5a;
+}
+
+body{
+  background:azure;
+}
+
+#requiredclasses {
+  background:azure;
+  text-align:center;
+  font-weight:bold;
+  font-size:20px;
+}
+

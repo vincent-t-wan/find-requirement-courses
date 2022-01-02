@@ -6,7 +6,7 @@ Gives you information about the leftover requirements of your BCS degree at UWat
 ## Conditions and Important Info
 Currently, you must meet these conditions in order for the analyzer to work:
 
-- You are a 2025 or 2026 University of Waterloo Bachelor of Computer Science (Co-op) undergrad student following this checklist.
+- You are a 2025 or 2026 University of Waterloo Bachelor of Computer Science (Co-op) undergrad student following [this checklist](https://cs.uwaterloo.ca/sites/ca.computer-science/files/uploads/files/2021-2022_bcs_3.pdf).
 
 - You have not passed multiple (> 1) courses that are prerequisites of another CS course that has already been passed.
 
@@ -18,7 +18,7 @@ Currently, you must meet these conditions in order for the analyzer to work:
 
 - You did your Depth constraint with a 300 level course (so either option A, or option B with a 300 level course).
 
-Note that the analyzer follows a heuristic of how students complete their checklist; it's not a definite algorithm, because there can exist multiple checkboxes that can be satisfied by one course (students can choose which checkbox to satisfy). Due to the unofficial transcript not including courses satisfied by AP/IB credits, you will have to take those courses into consideration after analyzing. Finally, the analyzer may contain bugs and/or errors, so don't take this too seriously; the University Calendar always takes precedence.
+Note that the analyzer follows a heuristic of how students complete their checklist; it's not a definite algorithm, because there can exist multiple checkboxes that can be satisfied by one course (students can choose which checkbox to satisfy). Due to the unofficial transcript not including courses satisfied by AP/IB credits, you will have to take those courses into consideration after analyzing. Finally, the analyzer may contain bugs and/or errors, so don't take this too seriously; the [University Calendar](http://ugradcalendar.uwaterloo.ca/group/MATH-Computer-Science-1) always takes precedence.
 
 ## Instructions
 1. Insert your University of Waterloo unofficial transcript (in PDF), by clicking on the "Choose File" button, selecting the unofficial transcript, and clicking open.
